@@ -1,0 +1,52 @@
+[
+  {
+    "id": "3d1b2c62-6563-11ea-bc55-0242ac130003",
+    "email": "william.lima@mail.com",
+    "username": "william.lima",
+    "firstName": "William",
+    "lastName": "Lima",
+    "birthDate": 769748400000,
+    "description": "Just some random guy.",
+    "password": "12345"
+  },
+  {
+    "id": "417d901a-6563-11ea-bc55-0242ac130003",
+    "email": "john.doe@mail.com",
+    "username": "john.doe",
+    "firstName": "John",
+    "lastName": "Doe",
+    "birthDate": 769748400000,
+    "description": "Another random guy.",
+    "password": "12345"
+  },
+  {
+    "id": "458f81ea-6563-11ea-bc55-0242ac130003",
+    "email": "james.manco@mail.com",
+    "username": "james.manco",
+    "firstName": "James",
+    "lastName": "Manco",
+    "birthDate": 769748400000,
+    "description": "This place has a lot of random guys... including me.",
+    "password": "12345"
+  },
+  {
+    "id": "4ab08336-6563-11ea-bc55-0242ac130003",
+    "email": "joseph.moe@mail.com",
+    "username": "joseph.moe",
+    "firstName": "Joseph",
+    "lastName": "Moe",
+    "birthDate": 769748400000,
+    "description": "Not a random guy :)",
+    "password": "12345"
+  },
+  {
+    "id": "4fbec630-6563-11ea-bc55-0242ac130003",
+    "email": "mate.demon@mail.com",
+    "username": "mate.demon",
+    "firstName": "Mate",
+    "lastName": "Demon",
+    "birthDate": 769748400000,
+    "description": "I'm not Matt Damon... or am I?",
+    "password": "12345"
+  }
+]
