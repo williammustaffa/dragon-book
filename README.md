@@ -1,4 +1,4 @@
-## Dragon Book
+## Dragons Book
 
 Simple React application using external API to manage a dragon catalog.
 

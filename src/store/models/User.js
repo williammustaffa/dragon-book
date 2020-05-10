@@ -1,4 +1,4 @@
- class Profile {
+ class User {
   constructor(payload = {}) {
     this.id = payload.id || "";
     this.username = payload.username || "";
@@ -9,6 +9,13 @@
     this.email = payload.email || "";
     this.registrationDate = payload.registrationDate || "";
   }
+
+  static state = {
+    isFetching: false,
+    isLoggedIn: false,
+    profile: new User({ firstName: "Guest", lastName: "User" }),
+    errorMessage: ""
+  }
 }
 
-export default Profile;
+export default User;

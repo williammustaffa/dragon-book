@@ -3,12 +3,21 @@
 exports[`Test Header component 1`] = `
 <DocumentFragment>
   <div
-    class="custom-header"
+    id="header"
   >
-    <img
-      class="ui image header-logo"
-      src="logo.svg"
-    />
+    <div
+      class="header-logo-container"
+    >
+      <img
+        class="ui image header-logo"
+        src="logo.png"
+      />
+      <div
+        class="header-logo-title"
+      >
+        Dragons Book
+      </div>
+    </div>
   </div>
 </DocumentFragment>
 `;

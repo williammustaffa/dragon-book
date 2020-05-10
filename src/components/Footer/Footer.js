@@ -5,12 +5,12 @@ function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <Segment inverted vertical className="custom-footer">
+    <Segment inverted vertical id="footer">
       <Container>
         <Grid>
           <Grid.Row>
             <Grid.Column textAlign="center">
-              Dragon Book © {year}
+              Dragons Book © {year}
             </Grid.Column>
           </Grid.Row>
           </Grid>

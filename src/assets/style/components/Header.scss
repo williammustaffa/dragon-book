@@ -1,0 +1,22 @@
+#header {
+  color: $color-dark-black;
+
+  .header {
+    &-logo-container {
+      display: table;
+      margin: $spacing * 2 auto;
+      text-align: center;
+    }
+
+    &-logo {
+      display: inline-block;
+      max-width: 100px;
+    }
+
+    &-logo-title {
+      margin-top: $spacing;
+      text-transform: uppercase;
+      font-size: $font-size-big;
+    }
+  }
+}

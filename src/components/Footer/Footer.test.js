@@ -9,6 +9,6 @@ test("Test Footer component", () => {
   // Run tests
   const year = new Date().getFullYear();
 
-  expect(getByText(`Dragon Book © ${year}`)).toBeInTheDocument();
+  expect(getByText(`Dragons Book © ${year}`)).toBeInTheDocument();
   expect(asFragment()).toMatchSnapshot();
 });

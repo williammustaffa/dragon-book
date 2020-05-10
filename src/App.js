@@ -5,6 +5,7 @@ import { Route, Switch } from "react-router";
 // Common components
 import { Header } from "./components/Header";
 import { Footer } from "./components/Footer";
+import { Navigation } from "components/Navigation";
 
 // Views
 import { Home } from "./views/Home";
@@ -18,6 +19,7 @@ function App() {
   return (
     <Fragment>
       <Header />
+      <Navigation />
       <Container className="app-container">
         <Switch>
           <Route exact path="/" component={Home} />

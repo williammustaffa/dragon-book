@@ -5,6 +5,7 @@ import sagas from "./sagas";
 import history from "./history";
 import createSagaMiddleware from "redux-saga"
 import logger from "redux-logger";
+import configureStore from "redux-mock-store";
 
 /**
  * Generates a redux store properly
@@ -12,7 +13,7 @@ import logger from "redux-logger";
  *
  * @param {*} preloadedState 
  */
-const generateStore = preloadedState => {
+function generateStore(preloadedState) {
   const sagaMiddleware = createSagaMiddleware();
 
   const store = createStore(
@@ -33,7 +34,19 @@ const generateStore = preloadedState => {
   return store;
 }
 
+/**
+ * Mock store and return a mocked state
+ * @param {*} preloadedState 
+ */
+function mockStore(preloadedState) {
+  const middlewares = [];
+  const generateMockStore = configureStore(middlewares);
+
+  return generateMockStore(preloadedState);
+}
+
 export {
   generateStore,
+  mockStore,
   history,
 };

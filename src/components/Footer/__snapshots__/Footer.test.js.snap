@@ -3,7 +3,8 @@
 exports[`Test Footer component 1`] = `
 <DocumentFragment>
   <div
-    class="ui inverted vertical segment custom-footer"
+    class="ui inverted vertical segment"
+    id="footer"
   >
     <div
       class="ui container"
@@ -17,7 +18,7 @@ exports[`Test Footer component 1`] = `
           <div
             class="center aligned column"
           >
-            Dragon Book © 2020
+            Dragons Book © 2020
           </div>
         </div>
       </div>

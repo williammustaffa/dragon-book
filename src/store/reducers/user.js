@@ -1,22 +1,22 @@
-import Profile from "store/models/Profile";
+import User from "store/models/User";
 import types from "store/types";
 
-const reducer = (state = [], { type, payload }) => {
+const reducer = (state = User.state, { type, payload }) => {
   switch (type) {
     case types.CREATE_PROFILE:
       return {
         ...state,
         isFetching: true,
         isLoggedIn: false,
-        profile: new Profile(),
+        profile: new User(),
         errorMessage: ""
       };
 
-    case types.CREATE_PROFILE_FAILURE:
+    case types.CREATE_User_FAILURE:
       return {
         ...state,
         isFetching: false,
-        profile: new Profile(),
+        profile: new User(),
         errorMessage: payload.message
       };
 
@@ -25,7 +25,7 @@ const reducer = (state = [], { type, payload }) => {
         ...state,
         isFetching: true,
         isLoggedIn: false,
-        profile: new Profile(),
+        profile: new User(),
         errorMessage: ""
       };
 
@@ -34,7 +34,7 @@ const reducer = (state = [], { type, payload }) => {
         ...state,
         isFetching: false,
         isLoggedIn: true,
-        profile: new Profile(payload)
+        profile: new User(payload)
       };
 
     case types.USER_CHECK_SESSION_FAILURE:
@@ -49,7 +49,7 @@ const reducer = (state = [], { type, payload }) => {
         ...state,
         isFetching: false,
         isLoggedIn: false,
-        profile: new Profile(),
+        profile: new User(),
         errorMessage: ""
       };
 
@@ -58,7 +58,7 @@ const reducer = (state = [], { type, payload }) => {
         ...state,
         isFetching: true,
         isLoggedIn: false,
-        profile: new Profile(),
+        profile: new User(),
         errorMessage: ""
       };
 
@@ -67,7 +67,7 @@ const reducer = (state = [], { type, payload }) => {
         ...state,
         isFetching: false,
         isLoggedIn: true,
-        profile: new Profile(payload)
+        profile: new User(payload)
       };
 
     case types.USER_LOGIN_FAILURE:
