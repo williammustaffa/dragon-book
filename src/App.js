@@ -8,7 +8,10 @@ import { Footer } from "./components/Footer";
 import { Navigation } from "components/Navigation";
 
 // Views
-import { Home } from "./views/Home";
+import { HomeView } from "./views/HomeView";
+import { DragonDetailsView } from "views/DragonDetailsView";
+import { CreateDragonView } from "views/CreateDragonView";
+import { LoginView } from "views/LoginView";
 
 // Global styles
 import "./assets/style/index.scss";
@@ -22,7 +25,10 @@ function App() {
       <Navigation />
       <Container className="app-container">
         <Switch>
-          <Route exact path="/" component={Home} />
+          <Route exact path="/login" component={LoginView} />
+          <Route exact path="/" component={HomeView} />
+          <Route exact path="/dragon/add" component={CreateDragonView} />
+          <Route exact path="/dragon/:id" component={DragonDetailsView} />
         </Switch>
       </Container>
       <Footer />

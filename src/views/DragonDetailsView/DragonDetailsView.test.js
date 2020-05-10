@@ -1,12 +1,11 @@
 import React from 'react';
-import Home from './Home';
+import DragonDetailsView from './DragonDetailsView';
 import { render } from '@testing-library/react'
 import '@testing-library/jest-dom/extend-expect'
 
-test('Test home component', () => {
-  const { asFragment, getByText } = render(<Home />);
+test('Test dragon details component', () => {
+  const { asFragment } = render(<DragonDetailsView />);
 
   // Run tests
-  expect(getByText("Generic View")).toBeInTheDocument();
   expect(asFragment()).toMatchSnapshot();
 });

@@ -37,7 +37,6 @@ function Navigation() {
               </Dropdown.Menu>
             </Dropdown> :
             <Menu.Item>
-              <Button secondary className="header-register-btn" onClick={navigateTo("/register")} style={{ marginRight: 5 }}>Register</Button>
               <Button color="red" className="header-login-btn" onClick={navigateTo("/login")}>Log in</Button>
             </Menu.Item>
           }
