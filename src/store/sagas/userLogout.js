@@ -10,7 +10,7 @@ export function* userLogout() {
   const connector = getAPIConnector();
   yield call(connector.userLogout);
 
-  yield put(push("/"));
+  yield put(push("/login"));
 } 
 
 /**

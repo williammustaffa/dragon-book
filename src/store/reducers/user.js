@@ -12,7 +12,7 @@ const reducer = (state = User.state, { type, payload }) => {
         errorMessage: ""
       };
 
-    case types.CREATE_User_FAILURE:
+    case types.CREATE_PROFILE_FAILURE:
       return {
         ...state,
         isFetching: false,

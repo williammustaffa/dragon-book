@@ -1,19 +1,24 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { push } from "connected-react-router";
-import { Button, Menu, Container, Dropdown, Icon } from "semantic-ui-react";
+import { Menu, Container, Dropdown, Icon } from "semantic-ui-react";
 import { userLogout } from "store/actions";
 
 function Navigation() {
   const dispatch = useDispatch();
   const navigateTo = path => () => dispatch(push(path));
 
-  const { user } = useSelector(state => ({
-    user: state.user,
+  const { isLoggedIn, profile } = useSelector(state => ({
+    isLoggedIn: state.user.isLoggedIn,
+    profile: state.user.profile,
   }));
 
   function onLogoutClick() {
     dispatch(userLogout());
+  }
+
+  if (!isLoggedIn) {
+    return null;
   }
 
   return (
@@ -29,17 +34,11 @@ function Navigation() {
         />
 
         <Menu.Menu position="right">
-          {
-            (user.isLoggedIn) ?
-            <Dropdown item text={`${user.profile.firstName} ${user.profile.lastName}`}>
-              <Dropdown.Menu>
-                <Dropdown.Item onClick={onLogoutClick}><Icon name="log out" />Log out</Dropdown.Item>
-              </Dropdown.Menu>
-            </Dropdown> :
-            <Menu.Item>
-              <Button color="red" className="header-login-btn" onClick={navigateTo("/login")}>Log in</Button>
-            </Menu.Item>
-          }
+          <Dropdown item text={`${profile.firstName} ${profile.lastName}`}>
+            <Dropdown.Menu>
+              <Dropdown.Item onClick={onLogoutClick}><Icon name="log out" />Log out</Dropdown.Item>
+            </Dropdown.Menu>
+          </Dropdown>
         </Menu.Menu>
       </Container>
     </Menu>

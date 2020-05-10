@@ -19,6 +19,5 @@ test("Test Navigation component", () => {
   );
 
   // Run tests
-  expect(getByText("Log in")).toBeInTheDocument();
   expect(asFragment()).toMatchSnapshot();
 });
