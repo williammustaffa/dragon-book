@@ -2,11 +2,13 @@ import moment from "moment";
 
 class Dragon {
   constructor(payload = {}) {
+    const histories = payload.histories || [];
+
     this.id = payload.id || "";
     this.createdAt = payload.createdAt;
     this.name = payload.name || "";
-    this.type = payload.type || "";
-    this.histories = payload.histories || [];
+    this.type = payload.type || "common";
+    this.history = histories.join("/n");
     this.imageUrl = payload.imageUrl;
   }
 
@@ -33,15 +35,8 @@ class Dragon {
    * @returns {String} color
    */
   get typeColor() {
-    const colors = {
-      legendary: "yellow",
-      epic: "purple",
-      rare: "blue",
-      normal: "grey",
-      default: "black"
-    };
-
-    return colors[this.type] || colors.default;
+    const type = Dragon.types[this.type] || Dragon.types.common;
+    return type.color;
   }
 
   /**
@@ -49,9 +44,14 @@ class Dragon {
    * @returns {String} description
    */
   get shortDescription() {
-    return this.histories
-      .join("\n")
-      .substring(0, 200);
+    return this.history.substring(0, 200);
+  }
+
+  static types = {
+    legendary: { id: "legendary", name: "Legendary", color: "yellow", stars: 4 },
+    epic: { id: "epic", name: "Epic", color: "purple", stars: 3 },
+    rare: { id: "rare", name: "Rare", color: "blue", stars: 2 },
+    common: { id: "common", name: "Common", color: "black", stars: 1 },
   }
 
   /**
