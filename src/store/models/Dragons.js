@@ -6,6 +6,9 @@ class Dragons {
       .map(dragon => new Dragon(dragon));
   }
 
+  /**
+   * Initial reducer state
+   */
   static state = {
     isFetching: false,
     items: [],

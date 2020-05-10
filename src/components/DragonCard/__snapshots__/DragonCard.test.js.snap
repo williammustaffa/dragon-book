@@ -1,0 +1,55 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test dragon card component 1`] = `
+<DocumentFragment>
+  <a
+    class="ui fluid card dragon-card"
+  >
+    <div
+      class="clickable card-image"
+      style="background-image: url(undefined);"
+    />
+    <div
+      class="content"
+    >
+      <div
+        class="header"
+      >
+        <span
+          class="clickable"
+        >
+          Saphira
+        </span>
+      </div>
+      <div
+        class="meta"
+      >
+        Created at 
+        <span
+          class="link static"
+        >
+          May 10th 20
+        </span>
+      </div>
+      <div
+        class="description clickable"
+      >
+        <div
+          class="LinesEllipsis  "
+        >
+          <div />
+        </div>
+      </div>
+    </div>
+    <div
+      class="extra content dragon-type"
+    >
+      <div
+        class="ui black small bottom attached label"
+      >
+        Epic
+      </div>
+    </div>
+  </a>
+</DocumentFragment>
+`;

@@ -1,0 +1,69 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test login component 1`] = `
+<DocumentFragment>
+  <div
+    class="ui centered grid"
+    id="login-view"
+  >
+    <div
+      class="row"
+    >
+      <div
+        class="four wide computer sixteen wide mobile eight wide tablet column"
+      >
+        <h1
+          class="ui center aligned header"
+        >
+          Log in
+        </h1>
+        <form
+          class="ui form"
+        >
+          <div
+            class="field"
+          >
+            <label>
+              E-mail
+            </label>
+            <div
+              class="ui fluid input"
+            >
+              <input
+                aria-invalid="true"
+                name="email"
+                type="text"
+              />
+            </div>
+          </div>
+          <div
+            class="field"
+          >
+            <label>
+              Password
+            </label>
+            <div
+              class="ui fluid input"
+            >
+              <input
+                aria-invalid="true"
+                name="password"
+                type="password"
+              />
+            </div>
+          </div>
+          <div
+            class="field primary-button"
+          >
+            <button
+              class="ui red fluid button"
+            >
+              Log in
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;

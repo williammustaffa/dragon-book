@@ -13,6 +13,7 @@ import { HomeView } from "./views/HomeView";
 import { DragonDetailsView } from "views/DragonDetailsView";
 import { CreateDragonView } from "views/CreateDragonView";
 import { LoginView } from "views/LoginView";
+import { NotFoundView } from "views/NotFoundView";
 
 // Session action
 import { userCheckSession } from "store/actions";
@@ -73,6 +74,7 @@ function App() {
           <PrivateRoute exact path="/" user={user} component={HomeView} />
           <PrivateRoute exact path="/dragon/add" user={user} component={CreateDragonView} />
           <PrivateRoute exact path="/dragon/:id" user={user} component={DragonDetailsView} />
+          <Route component={NotFoundView} />
         </Switch>
       </Container>
       <Footer />

@@ -1,9 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Test home component 1`] = `
+exports[`Test dragon details component 1`] = `
 <DocumentFragment>
   <div>
-    Generic View
+    Dragon Details View
   </div>
 </DocumentFragment>
 `;

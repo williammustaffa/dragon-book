@@ -7,7 +7,7 @@ import "@testing-library/jest-dom/extend-expect"
 import User from "store/models/User";
 
 test("Test Navigation component", () => {
-  // Initial user
+  // Mock store
   const store = mockStore({
     user: User.state,
   });

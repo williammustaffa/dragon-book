@@ -1,0 +1,21 @@
+.dragon-card {
+  transform-origin: 50% 50%;
+  cursor: pointer;
+
+  &:hover {
+    transform: scale(1.05);
+  }
+
+  .card-image {
+    height: 200px;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    background-color: #2e2e2e;
+  }
+
+  .dragon-type .ui.label{
+    text-transform: uppercase;
+    text-align: right;
+  }
+}

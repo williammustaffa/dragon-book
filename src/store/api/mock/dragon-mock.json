@@ -1,0 +1,52 @@
+[
+    {
+        "id": "1",
+        "createdAt": "2020-05-09T16:07:55.230Z",
+        "name": "Saphira",
+        "type": "epic",
+        "histories": [
+            "Saphira (pronounced \"suh-FEAR-uh\"), also known as Saphira II (used by fans to distinguish between the two dragons named \"Saphira\" in the books, the other being the dragon formerly bonded with Brom), Flametongue by the Urgals, as well as Bjartskular (meaning \"Brightscales\" in the Ancient Language) by the elves, was the only female dragon known to exist during the time of Eragon II, aside from Eldunarí. She was bonded to Eragon Shadeslayer as her Dragon Rider after her egg was rescued by the Varden's agents from the clutches of Galbatorix and was transported to the Spine by Arya, where Eragon found her. She was trained by Glaedr while Eragon was being trained by Oromis. Eventually Oromis, Glaedr, Saphira and Eragon started having classes together, then finally Eragon and Saphira had to leave to get ready for battle."
+        ],
+        "imageUrl": "https://vignette.wikia.nocookie.net/inheritance/images/7/7d/Saphira.jpg/revision/latest?cb=20100409085620"
+    },
+    {
+        "id": "2",
+        "createdAt": "2020-05-10T14:31:45.668Z",
+        "name": "Thorn",
+        "type": "rare",
+        "histories": [
+            "Thorn was a red male dragon, bonded to Murtagh. He was trained to fight by Shruikan and by the time of the Battle of The Burning Plains he could breathe fire. Thorn was skilled at aerial combat, being able to compete with Saphira, even when he was severely injured. However, he never got the time to adjust to his body, since Galbatorix sped his growth with the help of Eldunarí, or the heart of hearts of other slain dragons."
+        ],
+        "imageUrl": "https://vignette.wikia.nocookie.net/inheritance/images/6/61/Thorn.jpg/revision/latest?cb=20061122225257"
+    },
+    {
+        "id": "3",
+        "createdAt": "2020-05-10T01:16:42.903Z",
+        "name": "Fírnen",
+        "type": "epic",
+        "histories": [
+            "Fírnen (pronounced \"Feer-nin\") is a male Dragon, bonded to the Elf Queen Arya. He is the last egg (formerly) in Galbatorix's possession to hatch."
+        ],
+        "imageUrl": "https://vignette.wikia.nocookie.net/inheritance/images/8/85/F%C3%ADrnen.jpg/revision/latest/scale-to-width-down/350?cb=20110323162116"
+    },
+    {
+        "id": "4",
+        "createdAt": "2020-05-09T23:53:16.644Z",
+        "name": "Shruikan",
+        "type": "legendary",
+        "histories": [
+            "Shruikan was a black male Dragon, forcibly bonded to Galbatorix. He was the only dragon other than Glaedr to survive the Fall of the Dragon Riders to modern times."
+        ],
+        "imageUrl": "https://vignette.wikia.nocookie.net/inheritance/images/b/b9/Shruikan.png/revision/latest/scale-to-width-down/350?cb=20171127181419"
+    },
+    {
+        "id": "5",
+        "createdAt": "2020-05-10T00:59:47.166Z",
+        "name": "Glaedr",
+        "type": "legendary",
+        "histories": [
+            "Glaedr was a male dragon who was bonded to the elf Rider Oromis and the son of Nithring. He was the only dragon besides Shruikan known to have survived the Fall of the Dragon Riders, without taking into account the Eldunarí and eggs secretly hidden away in the Vault of Souls. Both Glaedr and Oromis remained in hiding in Du Weldenvarden long after the conflict, living on the brink of the Crags of Tel'naeír for safety. Their existence was a heavily guarded secret amongst the Elves, for if Glaedr or Oromis were to die before one of the remaining dragon eggs had hatched, then there would have been no one left to pass on the knowledge of the Dragon Riders to the new Rider.\n\nAlthough Glaedr was a strong and rather large dragon (Saphira said herself that he was three times bigger than she was), he was disabled—his left foreleg was severed by a terrible blow, leaving a white stump in place."
+        ],
+        "imageUrl": "https://vignette.wikia.nocookie.net/inheritance/images/9/93/Glaedr.jpg/revision/latest/scale-to-width-down/350?cb=20111209200612"
+    }
+]

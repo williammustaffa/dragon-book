@@ -6,6 +6,7 @@
   .app-container {
     height: 100%;
     flex-grow: 1;
+    margin: $spacing * 3 0;
     position: relative;
   }
 }

@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test 404 component 1`] = `
+<DocumentFragment>
+  <div
+    id="not-found-view"
+  >
+    <h1
+      class="ui header"
+    >
+      404
+    </h1>
+    <p>
+      <strong>
+        Oops! Nothing to see here.
+      </strong>
+    </p>
+    <button
+      class="ui secondary button"
+    >
+      Go to homepage
+    </button>
+  </div>
+</DocumentFragment>
+`;

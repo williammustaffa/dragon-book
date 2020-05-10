@@ -10,6 +10,9 @@
     this.registrationDate = payload.registrationDate || "";
   }
 
+  /**
+   * Initial reducer state
+   */
   static state = {
     isFetching: false,
     isLoggedIn: false,
