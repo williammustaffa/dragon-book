@@ -167,7 +167,7 @@ exports[`Test create dragon component 1`] = `
               class="field"
             >
               <button
-                class="ui red button"
+                class="ui red right floated button"
               >
                 Save and publish
               </button>

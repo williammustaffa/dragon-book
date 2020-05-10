@@ -62,10 +62,13 @@ function LoginView(props) {
               error={getError("password")}
               label="Password"
             />
-            {errorMessage && <Message negative>
-              <Message.Header>Login failed</Message.Header>
-              <p>{errorMessage}</p>
-            </Message>}
+            {
+              errorMessage &&
+              <Message negative>
+                <Message.Header>Login failed</Message.Header>
+                <p>{errorMessage}</p>
+              </Message>
+            }
             <Form.Button fluid color="red" className="primary-button">Log in</Form.Button>
           </Form>
         </Grid.Column>

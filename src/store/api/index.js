@@ -154,7 +154,8 @@ class API {
   listDragons = () => {
     return request
       .get("/dragon")
-      .then(API.parseReponse);
+      .then(API.parseReponse)
+      .then(dragons => R.sort((a, b) => a.name.localeCompare(b.name), dragons));
   }
 
   /**
@@ -172,6 +173,10 @@ class API {
    * @param {Object} data
    */
   createDragon = (data) => {
+    // Handle adapted data
+    data.histories = [data.history];
+    delete data.history;
+
     return request
       .post("/dragon", data)
       .then(API.parseReponse);

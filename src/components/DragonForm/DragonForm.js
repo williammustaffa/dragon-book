@@ -1,15 +1,12 @@
 import React, { useEffect } from "react";
 import PropTypes from "prop-types";
-import { useDispatch } from "react-redux";
-import { Form } from "semantic-ui-react";
+import { Form, Message } from "semantic-ui-react";
 import { useForm } from "react-hook-form";
 import Dragon from "store/models/Dragon";
 import * as R from "ramda";
 import { CustomDropdown } from "components/CustomDropdown";
 
-function DragonForm(props = {}) {
-  const { dragon = new Dragon(), onSubmit } = props;
-
+function DragonForm({ dragon = new Dragon(), onSubmit, loading, errorMessage }) {
   const { register, handleSubmit, errors, setValue, triggerValidation, getValues } = useForm({
     defaultValues: {
       id: dragon.id || "new",
@@ -20,13 +17,15 @@ function DragonForm(props = {}) {
     }
   });
 
-  const dispatch = useDispatch();
-
   // Component did mount
   useEffect(() => {
+    function validateImageUrl(imageUrl = "") {
+      return /(http(s?):)([/|.|\w|\s|-])*\.(?:jpg|jpeg|gif|png)/i.test(imageUrl);
+    }
+
     register({ name: "id" }, { required: false });
     register({ name: "name" }, { required: true });
-    register({ name: "imageUrl" }, { required: true });
+    register({ name: "imageUrl" }, { required: true, validate: validateImageUrl });
     register({ name: "type" }, { required: true });
     register({ name: "history" }, { required: true });
   }, [register]);
@@ -55,7 +54,7 @@ function DragonForm(props = {}) {
   }));
 
   return (
-    <Form onSubmit={handleSubmit(onFormSubmit)}>
+    <Form onSubmit={handleSubmit(onFormSubmit)} loading={loading}>
       <Form.Input
         fluid
         defaultValue={dragon.name}
@@ -89,8 +88,15 @@ function DragonForm(props = {}) {
         error={getError("history")}
         label="History"
       />
+      {
+        errorMessage &&
+        <Message negative>
+          <Message.Header>Error</Message.Header>
+          <p>{errorMessage}</p>
+        </Message>
+      }
       <div className="form-footer">
-        <Form.Button color="red">Save and publish</Form.Button>
+        <Form.Button floated="right" color="red">Save and publish</Form.Button>
       </div>
     </Form>
   )
@@ -98,6 +104,8 @@ function DragonForm(props = {}) {
 
 DragonForm.propTypes = {
   dragon: PropTypes.object,
+  loading: PropTypes.bool,
+  errorMessage: PropTypes.string,
   onSubmit: PropTypes.func,
 };
 

@@ -3,6 +3,7 @@ import { Grid, Image, Header, Divider } from "semantic-ui-react";
 import { useSelector, useDispatch } from "react-redux";
 import { fetchDragon } from "store/actions";
 import { Spinner } from "components/Spinner";
+import logo from "assets/images/logo.png";
 
 function DragonDetailsView(props) {
   const { id } = props.match.params;
@@ -28,7 +29,7 @@ function DragonDetailsView(props) {
     <Grid>
       <Grid.Column mobile={16} tablet={8} computer={4}>
         <Image
-          src={dragon.imageUrl}
+          src={dragon.imageUrl || logo}
           label={{
             as: 'a',
             color: dragon.typeColor,
