@@ -8,7 +8,7 @@ function Navigation() {
   const dispatch = useDispatch();
   const navigateTo = path => () => dispatch(push(path));
 
-  const { isLoggedIn, profile } = useSelector(state => ({
+  const { isLoggedIn, profile, } = useSelector(state => ({
     isLoggedIn: state.user.isLoggedIn,
     profile: state.user.profile,
   }));
@@ -17,11 +17,8 @@ function Navigation() {
     dispatch(userLogout());
   }
 
-  if (!isLoggedIn) {
-    return null;
-  }
-
   return (
+    isLoggedIn &&
     <Menu inverted className="header-navigation" id="navigation">
       <Container>
         <Menu.Item

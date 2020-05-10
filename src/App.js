@@ -1,6 +1,7 @@
-import React, { Fragment } from "react";
+import React, { Fragment, useEffect } from "react";
 import { Container } from "semantic-ui-react";
-import { Route, Switch } from "react-router";
+import { Route, Switch, Redirect } from "react-router";
+import { useDispatch, useSelector } from "react-redux";
 
 // Common components
 import { Header } from "./components/Header";
@@ -13,22 +14,65 @@ import { DragonDetailsView } from "views/DragonDetailsView";
 import { CreateDragonView } from "views/CreateDragonView";
 import { LoginView } from "views/LoginView";
 
+// Session action
+import { userCheckSession } from "store/actions";
+
 // Global styles
 import "./assets/style/index.scss";
 import "semantic-ui-css/semantic.min.css";
 
-// Main app component
+/**
+ * Ensure user has a session to see this component
+ * otherwhise user is redirected to login
+ * @param {*} param
+ */
+function PrivateRoute({ user, component, ...options }) {
+  return (
+    user.isLoggedIn ?
+    <Route component={component} {...options} />:
+    <Redirect to={`/login?redirect=${options.location.pathname}`} />
+  );
+};
+
+/**
+ * Ensure user goes to proper page if loggedin
+ * @param {*} param
+ */
+function RequiredPath({ user, component, ...options }) {
+  return (
+    user.isLoggedIn ?
+    <Redirect to={"/"} /> :
+    <Route component={component} {...options} />
+  );
+}
+
+/**
+ * Main App container
+ * Routing logic is done here
+ */
 function App() {
+  const dispatch = useDispatch();
+
+  // Get user data
+  const { user } = useSelector(state => ({
+    user: state.user,
+  }));
+
+  // Check session
+  useEffect(function () {
+    dispatch(userCheckSession());
+  }, [dispatch]);
+
   return (
     <Fragment>
       <Header />
-      <Navigation />
+      {user.isLoggedIn && <Navigation />}
       <Container className="app-container">
         <Switch>
-          <Route exact path="/login" component={LoginView} />
-          <Route exact path="/" component={HomeView} />
-          <Route exact path="/dragon/add" component={CreateDragonView} />
-          <Route exact path="/dragon/:id" component={DragonDetailsView} />
+          <RequiredPath exact path="/login" user={user} component={LoginView} />
+          <PrivateRoute exact path="/" user={user} component={HomeView} />
+          <PrivateRoute exact path="/dragon/add" user={user} component={CreateDragonView} />
+          <PrivateRoute exact path="/dragon/:id" user={user} component={DragonDetailsView} />
         </Switch>
       </Container>
       <Footer />
