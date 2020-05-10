@@ -2,6 +2,7 @@
 import database from "store/api/database";
 import * as R from "ramda";
 import { v1 as uuidv1 } from 'uuid';
+import request from "./request";
 
 const AUTH_TOKEN_KEY = "auth.token";
 
@@ -120,6 +121,50 @@ class API {
     localStorage.removeItem(AUTH_TOKEN_KEY);
 
     return retrieveDataDelayed(null, 0);
+  }
+
+  /**
+   * List dragons
+   */
+  listDragons = () => {
+    return request
+      .get("/dragon");
+  }
+
+  /**
+   * Get dragon details
+   * @param {String} id
+   */
+  getDragon = (id) => {
+    return request
+      .get(`/dragon/${id}`);
+  }
+
+  /**
+   * Get dragon details
+   * @param {Object} data
+   */
+  createDragon = (data) => {
+    return request
+      .post("/dragon", data);
+  }
+
+  /**
+   * Update dragon details
+   * @param {Object} data
+   */
+  updateDragon = (data) => {
+    return request
+      .put(`/dragon/${data.id}`, data);
+  }
+
+  /**
+   * Update dragon details
+   * @param {String} data
+   */
+  deleteDragon = (id) => {
+    return request
+      .put(`/dragon/${id}`);
   }
 }
 
