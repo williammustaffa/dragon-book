@@ -12,17 +12,17 @@ function DragonCard({ dragon }) {
   return (
     <Card fluid className="dragon-card" onClick={navigateTo(dragon.url)}>
       <div
-        className="clickable card-image"
+        className="card-image"
         style={{ backgroundImage: `url(${dragon.imageUrl})` }}
       ></div>
       <Card.Content>
         <Card.Header onClick={navigateTo(dragon.url)}>
-          <span className="clickable" >{dragon.name}</span>
+          <span >{dragon.name}</span>
         </Card.Header>
         <Card.Meta>
           Created at <span className="link static">{dragon.creationDate}</span>
         </Card.Meta>
-        <Card.Description className="clickable">
+        <Card.Description>
           <HTMLEllipsis
             unsafeHTML={dragon.shortDescription}
             maxLine="3"
@@ -31,8 +31,13 @@ function DragonCard({ dragon }) {
           />
         </Card.Description>
       </Card.Content>
-      <Card.Content extra className="dragon-type">
-        <Label attached="bottom" color={dragon.typeColor} size="small">
+      <Card.Content extra>
+        <Label
+          className="text-right text-uppercase"
+          attached="bottom"
+          color={dragon.typeColor}
+          size="small"
+        >
           {dragon.type}
         </Label>
       </Card.Content>

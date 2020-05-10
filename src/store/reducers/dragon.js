@@ -7,7 +7,7 @@ const reducer = (state = Dragon.state, { type, payload }) => {
       return {
         ...state,
         isFetching: true,
-        details: [],
+        details: new Dragon(),
         errorMessage: ""
       };
 

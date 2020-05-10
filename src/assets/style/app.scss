@@ -9,4 +9,12 @@
     margin: $spacing * 3 0;
     position: relative;
   }
+
+  .text-uppercase {
+    text-transform: uppercase;
+  }
+
+  .text-right {
+    text-align: right;
+  }
 }

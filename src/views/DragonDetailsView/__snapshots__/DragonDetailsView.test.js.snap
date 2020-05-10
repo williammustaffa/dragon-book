@@ -2,8 +2,36 @@
 
 exports[`Test dragon details component 1`] = `
 <DocumentFragment>
-  <div>
-    Dragon Details View
+  <div
+    class="ui grid"
+  >
+    <div
+      class="four wide computer sixteen wide mobile eight wide tablet column"
+    >
+      <div
+        class="ui image"
+      >
+        <a
+          class="ui black bottom attached label text-right text-uppercase"
+        >
+          Epic
+        </a>
+        <img />
+      </div>
+    </div>
+    <div
+      class="twelve wide computer sixteen wide mobile eight wide tablet column"
+    >
+      <h2
+        class="ui header"
+      >
+        Saphira
+      </h2>
+      Created at May 10th 20
+      <div
+        class="ui divider"
+      />
+    </div>
   </div>
 </DocumentFragment>
 `;

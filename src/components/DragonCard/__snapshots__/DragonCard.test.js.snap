@@ -6,7 +6,7 @@ exports[`Test dragon card component 1`] = `
     class="ui fluid card dragon-card"
   >
     <div
-      class="clickable card-image"
+      class="card-image"
       style="background-image: url(undefined);"
     />
     <div
@@ -15,9 +15,7 @@ exports[`Test dragon card component 1`] = `
       <div
         class="header"
       >
-        <span
-          class="clickable"
-        >
+        <span>
           Saphira
         </span>
       </div>
@@ -32,7 +30,7 @@ exports[`Test dragon card component 1`] = `
         </span>
       </div>
       <div
-        class="description clickable"
+        class="description"
       >
         <div
           class="LinesEllipsis  "
@@ -42,10 +40,10 @@ exports[`Test dragon card component 1`] = `
       </div>
     </div>
     <div
-      class="extra content dragon-type"
+      class="extra content"
     >
       <div
-        class="ui black small bottom attached label"
+        class="ui black small bottom attached label text-right text-uppercase"
       >
         Epic
       </div>
