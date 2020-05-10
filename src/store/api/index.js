@@ -6,29 +6,54 @@ import request from "./request";
 
 const AUTH_TOKEN_KEY = "auth.token";
 
-const retrieveDataDelayed = (value, time = 500) => {
-  return new Promise(resolve => {
-    setTimeout(() => resolve(value), time);
-  });
-}
-
-const retrieveErrorDelayed = (value, time = 500) => {
-  return new Promise((resolve, reject) => {
-    setTimeout(() => reject({ message: value }), time);
-  });
-}
-
-const tokenize = ({ id, email }) => {
-  return btoa(JSON.stringify({ id, email }));
-}
-
-const getTokenizedInfo = () => {
-  const token = localStorage.getItem(AUTH_TOKEN_KEY);
-
-  return token && JSON.parse(atob(token));
-}
-
 class API {
+  /**
+   * Fake API error delay
+   * @param {String} value 
+   * @param {Int} time 
+   */
+  static retrieveDataDelayed(value, time = 500) {
+    return new Promise(resolve => {
+      setTimeout(() => resolve(value), time);
+    });
+  }
+
+  /**
+   * Fake API error delay
+   * @param {String} value 
+   * @param {Int} time 
+   */
+  static retrieveErrorDelayed(value, time = 500) {
+    return new Promise((resolve, reject) => {
+      setTimeout(() => reject({ message: value }), time);
+    });
+  }
+
+  /**
+   * Create token for user
+   * @param {*} param
+   */
+  static tokenize({ id, email }) {
+    return btoa(JSON.stringify({ id, email }));
+  }
+
+  /**
+   * Get user info from token
+   */
+  static getTokenizedInfo() {
+    const token = localStorage.getItem(AUTH_TOKEN_KEY);
+  
+    return token && JSON.parse(atob(token));
+  }
+
+  /**
+   * Parse response object
+   * @param {*} res 
+   */
+  static parseReponse(res) {
+    return res.data;
+  }
+
   /**
    * Create a user profile
    */
@@ -52,7 +77,7 @@ class API {
     }
 
     if (errors.length) {
-      return retrieveErrorDelayed(errors.join("\r\n"));
+      return API.retrieveErrorDelayed(errors.join("\r\n"));
     }
 
     database.insert("profiles", {
@@ -76,14 +101,14 @@ class API {
    * Check user session an then populate data if needed
    */
   userCheckSession = () => {
-    const data = getTokenizedInfo();
+    const data = API.getTokenizedInfo();
 
     const results = database.queryAll("profiles", {
       query: { id: data && data.id },
     });
 
     if (!results.length) {
-      return retrieveErrorDelayed("No session found.");
+      return API.retrieveErrorDelayed("No session found.");
     }
 
     const user = R.clone(results[0]);
@@ -102,15 +127,15 @@ class API {
     });
 
     if (!results.length) {
-      return retrieveErrorDelayed("You have entered an invalid username or password");
+      return API.retrieveErrorDelayed("You have entered an invalid username or password");
     }
 
     const user = R.clone(results[0]);
 
     // Fake a token storage
-    localStorage.setItem(AUTH_TOKEN_KEY, tokenize(user));
+    localStorage.setItem(AUTH_TOKEN_KEY, API.tokenize(user));
 
-    return retrieveDataDelayed(user, 3000);
+    return API.retrieveDataDelayed(user, 3000);
   }
 
   /**
@@ -120,7 +145,7 @@ class API {
     // Clear token
     localStorage.removeItem(AUTH_TOKEN_KEY);
 
-    return retrieveDataDelayed(null, 0);
+    return API.retrieveDataDelayed(null, 0);
   }
 
   /**
@@ -128,7 +153,8 @@ class API {
    */
   listDragons = () => {
     return request
-      .get("/dragon");
+      .get("/dragon")
+      .then(API.parseReponse);
   }
 
   /**
@@ -137,7 +163,8 @@ class API {
    */
   getDragon = (id) => {
     return request
-      .get(`/dragon/${id}`);
+      .get(`/dragon/${id}`)
+      .then(API.parseReponse);
   }
 
   /**
@@ -146,7 +173,8 @@ class API {
    */
   createDragon = (data) => {
     return request
-      .post("/dragon", data);
+      .post("/dragon", data)
+      .then(API.parseReponse);
   }
 
   /**
@@ -155,7 +183,8 @@ class API {
    */
   updateDragon = (data) => {
     return request
-      .put(`/dragon/${data.id}`, data);
+      .put(`/dragon/${data.id}`, data)
+      .then(API.parseReponse);
   }
 
   /**
@@ -164,7 +193,8 @@ class API {
    */
   deleteDragon = (id) => {
     return request
-      .put(`/dragon/${id}`);
+      .put(`/dragon/${id}`)
+      .then(API.parseReponse);
   }
 }
 

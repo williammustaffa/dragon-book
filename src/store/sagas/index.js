@@ -1,8 +1,14 @@
 import { all } from "redux-saga/effects";
-import { watchUserLoginAsync } from "./userLogin";
-import { watchUserLogoutAsync } from "./userLogout";
-import { watchUserCheckSessionAsync } from "./userCheckSession";
-import { watchCreateProfileAsync } from "./createProfile";
+
+// User
+import { watchUserLoginAsync } from "./user/userLogin";
+import { watchUserLogoutAsync } from "./user/userLogout";
+import { watchUserCheckSessionAsync } from "./user/userCheckSession";
+import { watchCreateProfileAsync } from "./user/createProfile";
+
+// Dragons
+import { watchFetchDragons } from "./dragons/fetchDragons";
+import { watchFetchDragon } from "./dragon/fetchDragon";
 
 /**
  * Root saga provided to redux middleware
@@ -10,10 +16,15 @@ import { watchCreateProfileAsync } from "./createProfile";
 function* root() {
   const watchers = [];
 
+  // User watchers
   watchers.push(watchUserLoginAsync());
   watchers.push(watchUserLogoutAsync());
   watchers.push(watchUserCheckSessionAsync());
   watchers.push(watchCreateProfileAsync());
+
+  // Dragons watchers
+  watchers.push(watchFetchDragon());
+  watchers.push(watchFetchDragons());
 
   yield all(watchers);
 }
