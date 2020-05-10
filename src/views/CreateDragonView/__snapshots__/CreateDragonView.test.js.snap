@@ -2,8 +2,180 @@
 
 exports[`Test create dragon component 1`] = `
 <DocumentFragment>
-  <div>
-    Create Dragon View
+  <div
+    class="ui centered grid"
+  >
+    <div
+      class="row"
+    >
+      <div
+        class="eight wide computer sixteen wide mobile eight wide tablet column"
+      >
+        <h1
+          class="ui center aligned header page-title"
+        >
+          Add new dragon
+        </h1>
+        <form
+          class="ui form"
+        >
+          <div
+            class="field"
+          >
+            <label>
+              Dragon Name
+            </label>
+            <div
+              class="ui fluid input"
+            >
+              <input
+                aria-invalid="true"
+                name="name"
+                type="text"
+                value=""
+              />
+            </div>
+          </div>
+          <div
+            class="field"
+          >
+            <label>
+              Image URL
+            </label>
+            <div
+              class="ui fluid input"
+            >
+              <input
+                aria-invalid="true"
+                name="imageUrl"
+                type="text"
+                value=""
+              />
+            </div>
+          </div>
+          <div
+            class="custom-dropdown field"
+          >
+            <label>
+              Dragon Type
+            </label>
+            <div
+              aria-expanded="false"
+              class="ui fluid selection dropdown"
+              name="type"
+              role="listbox"
+              tabindex="0"
+            >
+              <div
+                aria-atomic="true"
+                aria-live="polite"
+                class="text"
+                role="alert"
+              >
+                Common
+              </div>
+              <i
+                aria-hidden="true"
+                class="dropdown icon"
+              />
+              <div
+                class="menu transition"
+              >
+                <div
+                  aria-checked="false"
+                  aria-selected="false"
+                  class="item"
+                  role="option"
+                  style="pointer-events: all;"
+                >
+                  <div
+                    class="ui yellow circular empty label"
+                  />
+                  <span
+                    class="text"
+                  >
+                    Legendary
+                  </span>
+                </div>
+                <div
+                  aria-checked="false"
+                  aria-selected="false"
+                  class="item"
+                  role="option"
+                  style="pointer-events: all;"
+                >
+                  <div
+                    class="ui purple circular empty label"
+                  />
+                  <span
+                    class="text"
+                  >
+                    Epic
+                  </span>
+                </div>
+                <div
+                  aria-checked="false"
+                  aria-selected="false"
+                  class="item"
+                  role="option"
+                  style="pointer-events: all;"
+                >
+                  <div
+                    class="ui blue circular empty label"
+                  />
+                  <span
+                    class="text"
+                  >
+                    Rare
+                  </span>
+                </div>
+                <div
+                  aria-checked="true"
+                  aria-selected="true"
+                  class="active selected item"
+                  role="option"
+                  style="pointer-events: all;"
+                >
+                  <div
+                    class="ui black circular empty label"
+                  />
+                  <span
+                    class="text"
+                  >
+                    Common
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="field"
+          >
+            <label>
+              History
+            </label>
+            <textarea
+              aria-invalid="true"
+              name="history"
+              rows="3"
+            />
+          </div>
+          <div
+            class="form-footer"
+          >
+            <div
+              class="field"
+            >
+              <button
+                class="ui red button"
+              >
+                Save and publish
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
   </div>
 </DocumentFragment>
 `;

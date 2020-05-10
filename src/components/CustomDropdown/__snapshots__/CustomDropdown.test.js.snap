@@ -1,0 +1,40 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test CustomDropdown component 1`] = `
+<DocumentFragment>
+  <div
+    class="custom-dropdown field"
+  >
+    <div
+      aria-expanded="false"
+      class="ui fluid selection dropdown"
+      name="type"
+      role="listbox"
+      tabindex="0"
+    >
+      <div
+        aria-atomic="true"
+        aria-live="polite"
+        class="text"
+        role="alert"
+      />
+      <i
+        aria-hidden="true"
+        class="dropdown icon"
+      />
+      <div
+        class="menu transition"
+      >
+        <div
+          aria-checked="false"
+          aria-selected="true"
+          class="selected item"
+          role="option"
+          style="pointer-events: all;"
+          test="option"
+        />
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;

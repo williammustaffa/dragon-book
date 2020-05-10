@@ -20,10 +20,6 @@ function DragonDetailsView(props) {
     }
   });
 
-  const renderDragonHistory = (history, index) => (
-    <p key={index}>{history}</p>
-  );
-
   if (isFetching) {
     return <Spinner />;
   }
@@ -46,7 +42,7 @@ function DragonDetailsView(props) {
         <Header as="h2">{dragon.name}</Header>
         Created at {dragon.creationDate}
         <Divider />
-        {dragon.histories.map(renderDragonHistory)}
+        <p>{dragon.history}</p>
       </Grid.Column>
     </Grid>
   );
