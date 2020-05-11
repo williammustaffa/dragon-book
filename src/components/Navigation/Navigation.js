@@ -22,7 +22,7 @@ function Navigation() {
     <Menu inverted className="header-navigation" id="navigation">
       <Container>
         <Menu.Item
-          name="All Dragons"
+          name="All"
           onClick={navigateTo("/")}
         />
         <Menu.Item

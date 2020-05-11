@@ -13,7 +13,7 @@ function Footer() {
               Dragons Book © {year}
             </Grid.Column>
           </Grid.Row>
-          </Grid>
+        </Grid>
       </Container>
     </Segment>
   );
