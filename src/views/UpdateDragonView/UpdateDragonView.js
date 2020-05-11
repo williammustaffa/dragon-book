@@ -6,10 +6,12 @@ import { Spinner } from "components/Spinner";
 import { ErrorMessage } from "components/ErrorMessage";
 import { ConfirmationModal } from "components/ConfirmationModal";
 import { fetchDragon, updateDragon, deleteDragon } from "store/actions";
+import { push } from "connected-react-router";
 
 function UpdateDragonView(props) {
   const { id } = props.match.params;
   const dispatch = useDispatch();
+  const navigateTo = path => () => dispatch(push(path));
 
   // Fetch dragon data
   useEffect(function () {
@@ -75,6 +77,9 @@ function UpdateDragonView(props) {
             loading={isFetching}
             errorMessage={errorMessage}
           />
+         <Button className="margin-top" onClick={navigateTo(dragon.detailsUrl)} fluid basic color="black">
+            Go to details page
+          </Button>
           <Button className="margin-top" onClick={openDeleteModal} fluid color="red">
             <Icon name="warning sign" />Delete
           </Button>

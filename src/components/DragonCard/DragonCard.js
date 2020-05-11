@@ -4,6 +4,7 @@ import HTMLEllipsis from "react-lines-ellipsis/lib/html"
 import { push } from "connected-react-router";
 import { useDispatch } from "react-redux";
 import { Card, Label, Icon } from "semantic-ui-react";
+import imageNotAvailable from "assets/images/imageNotAvailable.png";
 
 function DragonCard({ dragon }) {
   const dispatch = useDispatch();
@@ -13,7 +14,7 @@ function DragonCard({ dragon }) {
     <Card fluid className="dragon-card">
       <div
         className="card-image"
-        style={{ backgroundImage: `url(${dragon.imageUrl})` }}
+        style={{ backgroundImage: `url(${dragon.imageUrl || imageNotAvailable})` }}
       >
         <div className="card-actions">
           <div className="card-action clickable" onClick={navigateTo(dragon.detailsUrl)}>

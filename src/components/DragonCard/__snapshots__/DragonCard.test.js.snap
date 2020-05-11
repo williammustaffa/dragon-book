@@ -7,7 +7,7 @@ exports[`Test dragon card component 1`] = `
   >
     <div
       class="card-image"
-      style="background-image: url(undefined);"
+      style="background-image: url(imageNotAvailable.png);"
     >
       <div
         class="card-actions"

@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Test 404 component 1`] = `
+exports[`Test NotFoundView component 1`] = `
 <DocumentFragment>
   <div
     id="not-found-view"

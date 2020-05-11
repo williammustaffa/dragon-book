@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Test login component 1`] = `
+exports[`Test LoginView component 1`] = `
 <DocumentFragment>
   <div
     class="ui centered grid"

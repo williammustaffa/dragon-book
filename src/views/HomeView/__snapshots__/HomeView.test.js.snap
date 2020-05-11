@@ -1,9 +1,32 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Test home component 1`] = `
+exports[`Test HomeView component 1`] = `
 <DocumentFragment>
   <div
     class="ui grid"
-  />
+  >
+    <div
+      class="column"
+    >
+      <div
+        class="ui message"
+      >
+        <div
+          class="header"
+        >
+          Empty database
+        </div>
+        <p>
+          No dragons were found in the database. Please go to 
+          <span
+            class="clickable link"
+          >
+            "add dragon"
+          </span>
+           page and start registering.
+        </p>
+      </div>
+    </div>
+  </div>
 </DocumentFragment>
 `;

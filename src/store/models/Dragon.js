@@ -42,8 +42,14 @@ class Dragon {
    * @returns {String} color
    */
   get typeColor() {
-    const type = Dragon.types[this.type] || Dragon.types.common;
-    return type.color;
+    return this.typeSpec.color;
+  }
+
+  /**
+   * Returns dragon current type
+   */
+  get typeSpec() {
+    return Dragon.types[this.type] || Dragon.types.common;
   }
 
   /**

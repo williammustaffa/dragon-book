@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Test create dragon component 1`] = `
+exports[`Test CreateDragonView component 1`] = `
 <DocumentFragment>
   <div
     class="ui centered grid"

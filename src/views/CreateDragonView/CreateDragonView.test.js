@@ -6,7 +6,7 @@ import { render } from '@testing-library/react'
 import '@testing-library/jest-dom/extend-expect'
 import Dragon from 'store/models/Dragon';
 
-test('Test create dragon component', () => {
+test('Test CreateDragonView component', () => {
   // Create mock dragon object
   const dragon = Dragon.state;
   dragon.details = new Dragon({

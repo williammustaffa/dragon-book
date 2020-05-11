@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Test dragon details component 1`] = `
+exports[`Test DragonDetailsView component 1`] = `
 <DocumentFragment>
   <div
     class="ui grid"
@@ -17,9 +17,18 @@ exports[`Test dragon details component 1`] = `
           Epic
         </a>
         <img
-          src="logo.png"
+          src="imageNotAvailable.png"
         />
       </div>
+      <button
+        class="ui red fluid button margin-top"
+      >
+        <i
+          aria-hidden="true"
+          class="edit icon"
+        />
+         Edit
+      </button>
     </div>
     <div
       class="twelve wide computer sixteen wide mobile eight wide tablet column"

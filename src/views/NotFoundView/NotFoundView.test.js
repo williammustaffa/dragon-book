@@ -5,7 +5,7 @@ import { mockStore } from "store";
 import { render } from '@testing-library/react'
 import '@testing-library/jest-dom/extend-expect'
 
-test('Test 404 component', () => {
+test('Test NotFoundView component', () => {
   // Mock store
   const store = mockStore({});
 

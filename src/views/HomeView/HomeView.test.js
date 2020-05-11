@@ -6,7 +6,7 @@ import { mockStore } from "store";
 import { render } from '@testing-library/react'
 import '@testing-library/jest-dom/extend-expect'
 
-test('Test home component', () => {
+test('Test HomeView component', () => {
   // Mock store
   const store = mockStore({
     dragons: Dragons.state

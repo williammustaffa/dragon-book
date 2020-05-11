@@ -1,12 +1,6 @@
 .dragon-card {
-  transform-origin: 50% 50%;
-
-  &:hover {
-    transform: scale(1.02);
-  }
-
   .card-image {
-    height: 250px;
+    height: 200px;
     width: 100%;
     background-size: cover;
     background-position: center;
