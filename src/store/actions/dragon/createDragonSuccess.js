@@ -1,8 +1,8 @@
 import types from "store/types";
 
-export default function fetchDragonFailure(payload) {
+export default function createDragonSuccess(payload) {
   return {
-    type: types.FETCH_DRAGON_FAILURE,
+    type: types.CREATE_DRAGON_SUCCESS,
     payload,
   };
 };
