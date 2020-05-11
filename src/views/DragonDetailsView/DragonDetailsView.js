@@ -3,6 +3,7 @@ import { Grid, Image, Header, Divider } from "semantic-ui-react";
 import { useSelector, useDispatch } from "react-redux";
 import { fetchDragon } from "store/actions";
 import { Spinner } from "components/Spinner";
+import { ErrorMessage } from "components/ErrorMessage";
 import logo from "assets/images/logo.png";
 
 function DragonDetailsView(props) {
@@ -11,7 +12,7 @@ function DragonDetailsView(props) {
 
   useEffect(function () {
     dispatch(fetchDragon(id));
-  }, [dispatch]);
+  }, [dispatch, id]);
 
   const { dragon, isFetching, errorMessage } = useSelector(function (state) {
     return {
@@ -21,8 +22,14 @@ function DragonDetailsView(props) {
     }
   });
 
+  // Handle loading
   if (isFetching) {
     return <Spinner />;
+  }
+
+  // Handle error
+  if (errorMessage) {
+    return <ErrorMessage title="Error loading the page" content={errorMessage} />
   }
 
   return (

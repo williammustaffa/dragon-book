@@ -2,15 +2,36 @@
 
 exports[`Test dragon card component 1`] = `
 <DocumentFragment>
-  <a
+  <div
     class="ui fluid card dragon-card"
   >
     <div
       class="card-image"
       style="background-image: url(undefined);"
-    />
+    >
+      <div
+        class="card-actions"
+      >
+        <div
+          class="card-action clickable"
+        >
+          <i
+            aria-hidden="true"
+            class="eye icon"
+          />
+        </div>
+        <div
+          class="card-action clickable"
+        >
+          <i
+            aria-hidden="true"
+            class="edit icon"
+          />
+        </div>
+      </div>
+    </div>
     <div
-      class="content"
+      class="content clickable"
     >
       <div
         class="header"
@@ -48,6 +69,6 @@ exports[`Test dragon card component 1`] = `
         Epic
       </div>
     </div>
-  </a>
+  </div>
 </DocumentFragment>
 `;

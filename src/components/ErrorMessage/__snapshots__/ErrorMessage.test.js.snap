@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test ErrorMessage component 1`] = `
+<DocumentFragment>
+  <div
+    class="ui negative message"
+  >
+    <div
+      class="header"
+    >
+      Sample title
+    </div>
+    <p>
+      Sample error
+    </p>
+  </div>
+</DocumentFragment>
+`;

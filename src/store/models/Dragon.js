@@ -15,8 +15,15 @@ class Dragon {
   /**
    * Returns the dragon detail url
    */
-  get url() {
+  get detailsUrl() {
     return `/dragon/${this.id}`;
+  }
+
+  /**
+   * Returns the dragon update url
+   */
+  get updateUrl() {
+    return `/dragon/update/${this.id}`;
   }
 
   /**

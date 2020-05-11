@@ -7,10 +7,10 @@ import * as R from "ramda";
 import { CustomDropdown } from "components/CustomDropdown";
 
 function DragonForm({ dragon = new Dragon(), onSubmit, loading, errorMessage }) {
-  const { register, handleSubmit, errors, setValue, triggerValidation, getValues } = useForm({
+  const { register, handleSubmit, errors, setValue, triggerValidation } = useForm({
     defaultValues: {
       id: dragon.id || "new",
-      name: dragon.title || "",
+      name: dragon.name || "",
       imageUrl: dragon.imageUrl || "",
       type: dragon.type || "",
       history: dragon.history || "",
@@ -96,7 +96,7 @@ function DragonForm({ dragon = new Dragon(), onSubmit, loading, errorMessage }) 
         </Message>
       }
       <div className="form-footer">
-        <Form.Button floated="right" color="red">Save and publish</Form.Button>
+        <Form.Button fluid color="black">Save and publish</Form.Button>
       </div>
     </Form>
   )

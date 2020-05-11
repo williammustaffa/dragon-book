@@ -4,6 +4,7 @@ import { fetchDragons } from "store/actions";
 import { Grid } from "semantic-ui-react";
 import { DragonCard } from "components/DragonCard";
 import { Spinner } from "components/Spinner";
+import { ErrorMessage } from "components/ErrorMessage";
 
 function HomeView() {
   const dispatch = useDispatch();
@@ -28,6 +29,10 @@ function HomeView() {
 
   if (isFetching) {
     return <Spinner />;
+  }
+
+  if (errorMessage) {
+    return <ErrorMessage title="Error loading the page" content={errorMessage} />
   }
 
   return (

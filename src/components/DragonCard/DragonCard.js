@@ -3,20 +3,29 @@ import PropTypes from "prop-types";
 import HTMLEllipsis from "react-lines-ellipsis/lib/html"
 import { push } from "connected-react-router";
 import { useDispatch } from "react-redux";
-import { Card, Label } from "semantic-ui-react";
+import { Card, Label, Icon } from "semantic-ui-react";
 
 function DragonCard({ dragon }) {
   const dispatch = useDispatch();
   const navigateTo = path => () => dispatch(push(path));
 
   return (
-    <Card fluid className="dragon-card" onClick={navigateTo(dragon.url)}>
+    <Card fluid className="dragon-card">
       <div
         className="card-image"
         style={{ backgroundImage: `url(${dragon.imageUrl})` }}
-      ></div>
-      <Card.Content>
-        <Card.Header onClick={navigateTo(dragon.url)}>
+      >
+        <div className="card-actions">
+          <div className="card-action clickable" onClick={navigateTo(dragon.detailsUrl)}>
+            <Icon name="eye"/>
+          </div>
+          <div className="card-action clickable" onClick={navigateTo(dragon.updateUrl)}>
+            <Icon name="edit"/>
+          </div>
+        </div>
+      </div>
+      <Card.Content className="clickable" onClick={navigateTo(dragon.detailsUrl)}>
+        <Card.Header>
           <span >{dragon.name}</span>
         </Card.Header>
         <Card.Meta>
@@ -31,7 +40,7 @@ function DragonCard({ dragon }) {
           />
         </Card.Description>
       </Card.Content>
-      <Card.Content extra>
+      <Card.Content extra onClick={navigateTo(dragon.detailsUrl)}>
         <Label
           className="text-right text-uppercase"
           attached="bottom"

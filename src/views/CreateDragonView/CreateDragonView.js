@@ -2,7 +2,6 @@ import React from "react";
 import { Grid, Header } from "semantic-ui-react";
 import { useDispatch, useSelector } from "react-redux";
 import { DragonForm } from "components/DragonForm";
-import { Spinner } from "components/Spinner";
 import { createDragon } from "store/actions";
 
 function CreateDragonView() {

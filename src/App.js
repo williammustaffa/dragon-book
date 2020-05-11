@@ -12,11 +12,13 @@ import { Navigation } from "components/Navigation";
 import { HomeView } from "./views/HomeView";
 import { DragonDetailsView } from "views/DragonDetailsView";
 import { CreateDragonView } from "views/CreateDragonView";
+import { UpdateDragonView } from "views/UpdateDragonView";
 import { LoginView } from "views/LoginView";
 import { NotFoundView } from "views/NotFoundView";
 
 // Session action
 import { userCheckSession } from "store/actions";
+import { Spinner } from "components/Spinner";
 
 // Global styles
 import "./assets/style/index.scss";
@@ -28,8 +30,13 @@ import "semantic-ui-css/semantic.min.css";
  * @param {*} param
  */
 function PrivateRoute({ user, component, ...options }) {
+  // Get user data
+  const { isLoggedIn } = useSelector(state => ({
+    isLoggedIn: state.user.isLoggedIn,
+  }));
+
   return (
-    user.isLoggedIn ?
+    isLoggedIn ?
     <Route component={component} {...options} />:
     <Redirect to={`/login?redirect=${options.location.pathname}`} />
   );
@@ -40,23 +47,27 @@ function PrivateRoute({ user, component, ...options }) {
  * @param {*} param
  */
 function RequiredPath({ user, component, ...options }) {
+  // Get user data
+  const { isLoggedIn } = useSelector(state => ({
+    isLoggedIn: state.user.isLoggedIn,
+  }));
+
   return (
-    user.isLoggedIn ?
+    isLoggedIn ?
     <Redirect to={"/"} /> :
     <Route component={component} {...options} />
   );
 }
 
 /**
- * Main App container
- * Routing logic is done here
+ * Prevent router logic running before session check
  */
-function App() {
+function SessionContainer({ children }) {
   const dispatch = useDispatch();
 
   // Get user data
-  const { user } = useSelector(state => ({
-    user: state.user,
+  const { isCheckingSession } = useSelector(state => ({
+    isCheckingSession: state.user.isCheckingSession,
   }));
 
   // Check session
@@ -65,17 +76,32 @@ function App() {
   }, [dispatch]);
 
   return (
+    isCheckingSession ?
+    <Spinner /> :
+    children
+  );
+}
+
+/**
+ * Main App container
+ * Routing logic is done here
+ */
+function App() {
+  return (
     <Fragment>
       <Header />
-      {user.isLoggedIn && <Navigation />}
+      <Navigation />
       <Container className="app-container">
-        <Switch>
-          <RequiredPath exact path="/login" user={user} component={LoginView} />
-          <PrivateRoute exact path="/" user={user} component={HomeView} />
-          <PrivateRoute exact path="/dragon/add" user={user} component={CreateDragonView} />
-          <PrivateRoute exact path="/dragon/:id" user={user} component={DragonDetailsView} />
-          <Route component={NotFoundView} />
-        </Switch>
+        <SessionContainer>
+          <Switch>
+            <RequiredPath exact path="/login" component={LoginView} />
+            <PrivateRoute exact path="/" component={HomeView} />
+            <PrivateRoute exact path="/dragon/add" component={CreateDragonView} />
+            <PrivateRoute exact path="/dragon/update/:id" component={UpdateDragonView} />
+            <PrivateRoute exact path="/dragon/:id" component={DragonDetailsView} />
+            <Route component={NotFoundView} />
+          </Switch>
+        </SessionContainer>
       </Container>
       <Footer />
     </Fragment>

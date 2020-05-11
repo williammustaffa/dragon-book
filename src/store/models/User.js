@@ -14,6 +14,7 @@
    * Initial reducer state
    */
   static state = {
+    isCheckingSession: true,
     isFetching: false,
     isLoggedIn: false,
     profile: new User({ firstName: "Guest", lastName: "User" }),

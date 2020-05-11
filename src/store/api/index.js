@@ -198,7 +198,7 @@ class API {
    */
   deleteDragon = (id) => {
     return request
-      .put(`/dragon/${id}`)
+      .delete(`/dragon/${id}`)
       .then(API.parseReponse);
   }
 }

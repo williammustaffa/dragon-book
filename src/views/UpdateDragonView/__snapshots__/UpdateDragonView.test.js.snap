@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Test create dragon component 1`] = `
+exports[`Test UpdateDragonView component 1`] = `
 <DocumentFragment>
   <div
     class="ui centered grid"
@@ -14,7 +14,7 @@ exports[`Test create dragon component 1`] = `
         <h1
           class="ui center aligned header page-title"
         >
-          Add new dragon
+          Update dragon
         </h1>
         <form
           class="ui form"
@@ -32,7 +32,7 @@ exports[`Test create dragon component 1`] = `
                 aria-invalid="true"
                 name="name"
                 type="text"
-                value=""
+                value="Saphira"
               />
             </div>
           </div>
@@ -71,9 +71,7 @@ exports[`Test create dragon component 1`] = `
                 aria-live="polite"
                 class="text"
                 role="alert"
-              >
-                Common
-              </div>
+              />
               <i
                 aria-hidden="true"
                 class="dropdown icon"
@@ -83,8 +81,8 @@ exports[`Test create dragon component 1`] = `
               >
                 <div
                   aria-checked="false"
-                  aria-selected="false"
-                  class="item"
+                  aria-selected="true"
+                  class="selected item"
                   role="option"
                   style="pointer-events: all;"
                 >
@@ -130,9 +128,9 @@ exports[`Test create dragon component 1`] = `
                   </span>
                 </div>
                 <div
-                  aria-checked="true"
-                  aria-selected="true"
-                  class="active selected item"
+                  aria-checked="false"
+                  aria-selected="false"
+                  class="item"
                   role="option"
                   style="pointer-events: all;"
                 >
@@ -174,6 +172,15 @@ exports[`Test create dragon component 1`] = `
             </div>
           </div>
         </form>
+        <button
+          class="ui red fluid button margin-top"
+        >
+          <i
+            aria-hidden="true"
+            class="warning sign icon"
+          />
+          Delete
+        </button>
       </div>
     </div>
   </div>

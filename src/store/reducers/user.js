@@ -23,7 +23,8 @@ const reducer = (state = User.state, { type, payload }) => {
     case types.USER_CHECK_SESSION:
       return {
         ...state,
-        isFetching: true,
+        isFetching: false,
+        isCheckingSession: true,
         isLoggedIn: false,
         profile: new User(),
         errorMessage: ""
@@ -33,6 +34,7 @@ const reducer = (state = User.state, { type, payload }) => {
       return {
         ...state,
         isFetching: false,
+        isCheckingSession: false,
         isLoggedIn: true,
         profile: new User(payload)
       };
@@ -40,6 +42,7 @@ const reducer = (state = User.state, { type, payload }) => {
     case types.USER_CHECK_SESSION_FAILURE:
       return {
         ...state,
+        isCheckingSession: false,
         isFetching: false,
         isLoggedIn: false,
       };

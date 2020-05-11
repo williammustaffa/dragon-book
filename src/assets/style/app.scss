@@ -17,4 +17,12 @@
   .text-right {
     text-align: right;
   }
+
+  .margin-top {
+    margin-top: $spacing;
+  }
+
+  .clickable {
+    cursor: pointer;
+  }
 }

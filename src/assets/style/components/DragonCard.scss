@@ -1,16 +1,43 @@
 .dragon-card {
   transform-origin: 50% 50%;
-  cursor: pointer;
 
   &:hover {
-    transform: scale(1.05);
+    transform: scale(1.02);
   }
 
   .card-image {
-    height: 200px;
+    height: 250px;
     width: 100%;
     background-size: cover;
     background-position: center;
     background-color: #2e2e2e;
+
+    .card-actions {
+      transition: 0.2s ease-in-out;
+      height: 100%;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: rgba(0, 0, 0, 0.5);
+      opacity: 0;
+      color: $color-white;
+      font-size: $font-size-big;
+    }
+
+    .card-action {
+      margin: $spacing;
+      transform-origin: 50% 50%;
+
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+
+    &:hover {
+      .card-actions {
+        opacity: 1;
+      }
+    }
   }
 }
