@@ -5,13 +5,14 @@ Simple React application using external API to manage a dragon catalog.
 This project was generated using [Create React App](https://github.com/facebook/create-react-app) and it uses **React Hooks** along with **Redux** + **Redux Saga** for the data flow following the **MVC** pattern.
 
 For the components development, it is using **Semantic UI React** framework in order to improve development speed.
+
 **Unit Testing** was implemented using the **Jest** library and its react extentions.
 
 ## Dependencies
 - Node 13.6.0 or higher
 - NPM 6.13.4 or higher 
 
-# Running the project
+## Running the project
 Install project dependencies:
 ```
 npm install
