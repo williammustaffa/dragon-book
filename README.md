@@ -2,6 +2,25 @@
 
 Simple React application using external API to manage a dragon catalog.
 
+This project was generated using [Create React App](https://github.com/facebook/create-react-app) and it uses **React Hooks** along with **Redux** + **Redux Saga** for the data flow following the **MVC** pattern.
+For the components development, it is using **Semantic UI React** framework in order to improve development speed.
+**Unit Testing** was implemented using the **Jest** library and its react extentions.
+
+## Dependencies
+- Node 13.6.0 or higher
+- NPM 6.13.4 or higher 
+
+# Running the project
+Install project dependencies:
+```
+npm install
+```
+then run development server:
+```
+npm start
+```
+Access application on [http://localhost:3000](http://localhost:3000).
+
 ## Pre defined users
 | Email | Password |
 | ------------- | ------------- |
@@ -10,10 +29,6 @@ Simple React application using external API to manage a dragon catalog.
 | joseph.moe@mail.com | 12345 |
 | james.manco@mail.com | 12345 |
 | mate.demon@mail.com | 12345 |
-
-## Available Scripts
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app)
 
 ## Available Scripts
 
