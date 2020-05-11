@@ -187,6 +187,10 @@ class API {
    * @param {Object} data
    */
   updateDragon = (data) => {
+    // Handle adapted data
+    data.histories = [data.history];
+    delete data.history;
+
     return request
       .put(`/dragon/${data.id}`, data)
       .then(API.parseReponse);

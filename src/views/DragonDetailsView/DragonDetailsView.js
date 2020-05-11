@@ -50,6 +50,7 @@ function DragonDetailsView(props) {
         <Button
           color="red"
           fluid
+          basic
           onClick={navigateTo(dragon.updateUrl)}
           className="margin-top"
         >
